@@ -4,6 +4,8 @@ server:
 eureka:
   instance:
     hostname: eureka-server1
+    prefer-ip-address: true
+    instance-id: eureka-server1
   client:
     register-with-eureka: true
     fetch-registry: true
@@ -24,6 +26,8 @@ server:
 eureka:
   instance:
     hostname: eureka-server2
+    prefer-ip-address: true
+    instance-id: eureka-server2
   client:
     register-with-eureka: true
     fetch-registry: true

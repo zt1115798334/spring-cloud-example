@@ -1,0 +1,19 @@
+server:
+  port: 8791
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@eureka-server1:8761/eureka,http://admin:admin@eureka-server2:8762/eureka
+    register-with-eureka: false
+    fetch-registry: true
+spring:
+  application:
+    name: service-consumer-feign
+zuul:
+  routes:
+    consumer1:
+      path: /consumer1/**
+      serviceId: service-consumer-feign
+    consumer2:
+      path: /consumer2/**
+      serviceId: service-consumer-ribbon

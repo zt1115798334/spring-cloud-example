@@ -26,6 +26,7 @@
         <module>service-producer</module>
         <module>service-consumer-ribbon</module>
         <module>service-consumer-feign</module>
+        <module>service-zuul-gateway</module>
     </modules>
     <dependencyManagement>
         <dependencies>

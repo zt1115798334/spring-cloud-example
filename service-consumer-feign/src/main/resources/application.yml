@@ -3,9 +3,14 @@ server:
 eureka:
   client:
     fetch-registry: true
-    register-with-eureka: false
+    register-with-eureka: true
     service-url:
       defaultZone: http://admin:admin@eureka-server1:8761/eureka,http://admin:admin@eureka-server2:8762/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: service-consumer-feign
+    lease-expiration-duration-in-seconds: 5
+    lease-renewal-interval-in-seconds: 2
 feign:
   hystrix:
     enabled: true
@@ -17,3 +22,6 @@ feign:
         - application/xml
         - application/json
       min-request-size: 2048 # 超过2048的字节进行压缩
+spring:
+  application:
+    name: service-consumer-feign

@@ -2,7 +2,15 @@ server:
   port: 8781
 eureka:
   client:
-    register-with-eureka: false
+    register-with-eureka: true
     fetch-registry: true
     service-url:
       defaultZone: http://admin:admin@eureka-server1:8761/eureka,http://admin:admin@eureka-server2:8762/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: service-consumer-ribbon
+    lease-renewal-interval-in-seconds: 2
+    lease-expiration-duration-in-seconds: 5
+spring:
+  application:
+    name: service-consumer-ribbon
