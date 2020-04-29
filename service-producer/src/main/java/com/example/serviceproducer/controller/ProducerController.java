@@ -1,5 +1,7 @@
 package com.example.serviceproducer.controller;
 
+import com.example.serviceproducer.entity.Student;
+import com.example.serviceproducer.service.StudentService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -21,6 +24,12 @@ public class ProducerController {
 
     @Value("${server.port}")
     private String port;
+
+    private final StudentService studentService;
+
+    public ProducerController(StudentService studentService) {
+        this.studentService = studentService;
+    }
 
     @GetMapping("message")
     public String message() {
@@ -38,5 +47,10 @@ public class ProducerController {
 
     public String showNameException(@RequestParam("name") String name) {
         return name + " is over";
+    }
+
+    @GetMapping("findStudentAll")
+    public List<Student> findStudentAll() {
+        return studentService.findAll();
     }
 }

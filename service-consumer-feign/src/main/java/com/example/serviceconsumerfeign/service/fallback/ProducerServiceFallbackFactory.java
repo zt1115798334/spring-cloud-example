@@ -1,8 +1,12 @@
 package com.example.serviceconsumerfeign.service.fallback;
 
+import com.example.api.entity.Student;
 import com.example.serviceconsumerfeign.service.ProducerService;
 import feign.hystrix.FallbackFactory;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -25,6 +29,11 @@ public class ProducerServiceFallbackFactory implements FallbackFactory<ProducerS
             @Override
             public String showName(String name) {
                 return "showName not linking";
+            }
+
+            @Override
+            public List<Student> findStudentAll() {
+                return new ArrayList<>();
             }
         };
     }

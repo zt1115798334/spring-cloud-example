@@ -1,11 +1,14 @@
 package com.example.serviceconsumerfeign.service;
 
+import com.example.api.entity.Student;
 import com.example.serviceconsumerfeign.service.fallback.ProducerServiceFallbackFactory;
 import com.example.serviceproducer.FeignClientConfig;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -24,4 +27,7 @@ public interface ProducerService {
 
     @PostMapping("showName")
     String showName(@RequestParam("name") String name);
+
+    @GetMapping("findStudentAll")
+    List<Student> findStudentAll();
 }
