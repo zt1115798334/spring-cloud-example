@@ -19,8 +19,8 @@ eureka:
   instance:
     instance-id: service-producer1
     prefer-ip-address: true
-    lease-expiration-duration-in-seconds: 5 # Èç¹ûÏÖÔÚ³¬¹ıÁË5ÃëµÄ¼ä¸ô£¨Ä¬ÈÏÊÇ90Ãë£©
-    lease-renewal-interval-in-seconds: 2 # ÉèÖÃĞÄÌøµÄÊ±¼ä¼ä¸ô£¨Ä¬ÈÏÊÇ30Ãë£©
+    lease-expiration-duration-in-seconds: 5 # ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú³ï¿½ï¿½ï¿½ï¿½ï¿½5ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½90ï¿½ë£©
+    lease-renewal-interval-in-seconds: 2 # ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½30ï¿½ë£©
 spring:
   profiles: producer1
   application:
@@ -36,8 +36,8 @@ eureka:
   instance:
     instance-id: service-producer2
     prefer-ip-address: true
-    lease-expiration-duration-in-seconds: 5 # Èç¹ûÏÖÔÚ³¬¹ıÁË5ÃëµÄ¼ä¸ô£¨Ä¬ÈÏÊÇ90Ãë£©
-    lease-renewal-interval-in-seconds: 2 # ÉèÖÃĞÄÌøµÄÊ±¼ä¼ä¸ô£¨Ä¬ÈÏÊÇ30Ãë£©
+    lease-expiration-duration-in-seconds: 5
+    lease-renewal-interval-in-seconds: 2
 spring:
   profiles: producer2
   application:
