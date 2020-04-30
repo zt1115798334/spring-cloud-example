@@ -39,8 +39,9 @@ public class ProducerController {
     @PostMapping("showName")
     @HystrixCommand(fallbackMethod = "showNameException")
     public String showName(@RequestParam("name") String name) {
-        if (Objects.equals(name, "xiaoming")) {
-            throw new RuntimeException("xiaoming is die");
+        String ming = "xiaoming";
+        if (Objects.equals(name, ming)) {
+            throw new RuntimeException("xiao ming is die");
         }
         return "hello, my name is " + name + "，my port is：" + port;
     }

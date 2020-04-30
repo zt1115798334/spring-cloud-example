@@ -1,7 +1,6 @@
 package com.example.serviceproducer.entity;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import java.time.LocalDate;

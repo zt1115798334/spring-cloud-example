@@ -28,8 +28,10 @@ public class RestConfig {
     @Bean
     public HttpHeaders getHeaders() {
         HttpHeaders headers = new HttpHeaders();
-        String auth = "admin:producer"; // 认证的原始信息
-        byte[] encodedAuth = Base64.getEncoder().encode(auth.getBytes(StandardCharsets.US_ASCII)); // 进行一个加密的处理
+        // 认证的原始信息
+        String auth = "admin:producer";
+        // 进行一个加密的处理
+        byte[] encodedAuth = Base64.getEncoder().encode(auth.getBytes(StandardCharsets.US_ASCII));
         String authHeader = "Basic " + new String(encodedAuth);
         headers.set("Authorization", authHeader);
         return headers;
